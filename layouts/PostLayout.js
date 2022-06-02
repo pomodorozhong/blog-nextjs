@@ -60,13 +60,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                         <div className="relative h-10 w-10">
                           <Image
                             src={author.avatar}
-                            width="38px"
-                            height="38px"
+                            width="40px"
+                            height="40px"
                             alt="avatar"
                             className="h-10 w-10 rounded-full"
                           />
                           <div
-                            className="absolute top-0 right-0 h-10 w-10 rounded-full border-2 border-gray-300"
+                            className="absolute top-0 right-0 h-10 w-10 rounded-full border-gray-300"
                             style={{ borderWidth: '1px' }}
                           ></div>
                         </div>
