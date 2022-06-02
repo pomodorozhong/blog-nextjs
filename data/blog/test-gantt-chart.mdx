@@ -1,0 +1,52 @@
+---
+title: 'Test Gantt Chart'
+date: 2022-05-29T18:01:14+08:00
+draft: false
+tags:
+  - test
+author: pomodorozhong
+---
+
+import ChartGantt from './ChartGantt.js'
+
+<ChartGantt
+  propViewMode="week"
+  propTasks={[
+    {
+      name: 'learning SwiftUI',
+      start: '2022-04-01',
+      end: '2022-04-14',
+      color: 'green',
+    },
+    {
+      name: 'making the MVP of my app',
+      start: '2022-04-08',
+      end: '2022-04-14',
+      color: 'yellow',
+    },
+    {
+      name: 'iterate the MVP',
+      start: '2022-04-14',
+      end: '2022-04-22',
+      color: 'orange',
+    },
+    {
+      name: 'get feedback from user',
+      start: '2022-04-14',
+      end: '2022-04-22',
+      color: 'red',
+    },
+    {
+      name: 'put the app on the App Store',
+      start: '2022-04-22',
+      end: '2022-04-29',
+      color: 'blue',
+    },
+    {
+      name: 'put the app on the App Store',
+      start: '2022-04-22',
+      end: '2022-04-29',
+      color: 'violet',
+    },
+  ]}
+/>
