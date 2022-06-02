@@ -57,13 +57,19 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   {authorDetails.map((author) => (
                     <li className="flex items-center space-x-2" key={author.name}>
                       {author.avatar && (
-                        <Image
-                          src={author.avatar}
-                          width="38px"
-                          height="38px"
-                          alt="avatar"
-                          className="h-10 w-10 rounded-full"
-                        />
+                        <div className="relative h-10 w-10">
+                          <Image
+                            src={author.avatar}
+                            width="38px"
+                            height="38px"
+                            alt="avatar"
+                            className="h-10 w-10 rounded-full"
+                          />
+                          <div
+                            className="absolute top-0 right-0 h-10 w-10 rounded-full border-2 border-gray-300"
+                            style={{ borderWidth: '1px' }}
+                          ></div>
+                        </div>
                       )}
                       <dl className="whitespace-nowrap text-sm font-medium leading-5">
                         <dt className="sr-only">Name</dt>
