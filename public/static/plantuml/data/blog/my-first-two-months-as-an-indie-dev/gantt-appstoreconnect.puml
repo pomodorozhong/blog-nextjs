@@ -1,0 +1,24 @@
+@startgantt
+' title Damn App Store Connect
+scale 2
+
+Project starts 2022-05-01
+projectscale daily zoom 2
+hide footbox
+
+[Waiting for the payment processing of Apple Developer Program] as [task6] lasts  2 days and starts 2022-05-01
+[Trying to get on the TestFlight] as [task7]                               lasts 17 days and starts at [task6]'s end
+[Contacting the support] as [task8]                                        lasts 14 days and starts 2022-05-05
+
+[task6] is colored in #FEC2D6
+[task7] is colored in #FEC2D6
+[task8] is colored in #FEC2D6
+
+<style>
+ganttDiagram {
+    timeline {
+        BackgroundColor #dce0e0
+    }
+}
+</style>
+@endgantt

@@ -1,6 +1,11 @@
 import NextImage from 'next/image'
 
-// eslint-disable-next-line jsx-a11y/alt-text
-const Image = ({ ...rest }) => <NextImage {...rest} />
+const Image = ({ ...rest }) => (
+  <div className="flex">
+    <div className="m-auto">
+      <NextImage {...rest} />
+    </div>
+  </div>
+)
 
 export default Image

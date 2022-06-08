@@ -1,0 +1,23 @@
+@startgantt
+' title an overly optimistic expectation
+scale 2
+
+Project starts 2022-04-01
+projectscale daily zoom 1.3
+' projectscale weekly zoom 4
+hide footbox
+
+[Learning Swift and SwiftUI] as [task1]  lasts 14 days and starts 2022-04-01
+[Making the MVP] as [task2]    lasts  7 days and starts 2022-04-08
+[Get user feedback] as [task3] lasts  7 days and starts at [task1]'s end
+[Iterate the MVP] as [task4]   lasts  7 days and starts at [task1]'s end
+[Get on App Store] as [task5]  lasts  7 days and starts at [task3]'s end
+
+<style>
+ganttDiagram {
+    timeline {
+        BackgroundColor #dce0e0
+    }
+}
+</style>
+@endgantt
