@@ -1,0 +1,173 @@
+---
+title: 'My First Two Months as an Indie Dev'
+date: 2022-06-03
+draft: false
+tags:
+  - Indie Dev
+  - iOS
+author: pomodorozhong
+---
+
+import TOCInline from './TOCInline.js'
+
+<TOCInline toc={props.toc} asDisclosure />
+
+## Introduction
+
+The past two months are my first two months of being an independent developer. And my first project is an iOS project.
+
+It's more fun than I anticipated and also more painful than I anticipated at the same time.
+
+import ImageTitle from './ImageTitle.js'
+
+<ImageTitle>Gantt chart of what I expected</ImageTitle>
+
+![Gantt chart of what I expected](/static/plantuml/data/blog/my-first-two-months-as-an-indie-dev/gantt-what-I-expected.svg)
+
+☝️This is what I expected. Spending one month, to put my app on the App Store, which includes the following steps:
+
+- Two weeks to learn iOS development
+- One week to build a minimum viable product (MVP)
+- One week to iterate the MVP
+- One week to go through the reviewing process, to put the app on the store
+
+---
+
+<ImageTitle>Gantt chart of what actually happened</ImageTitle>
+
+![Gantt chart of what actually happened](/static/plantuml/data/blog/my-first-two-months-as-an-indie-dev/gantt-what-actually-happened.svg)
+
+☝️And this is what actually happened. Spent two months, and only got the app on the [Testflight](https://developer.apple.com/testflight/). These were some of the things that goes wrong:
+
+- Have to learn iOS development constantly, because there are too many quirks in SwiftUI
+- Take 20 days to build the MVP because [Share Extension](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html) is a pain in the ass
+- Have to wait 20 days to distribute the MVP to get any feedback
+- The [App Store Connect](https://appstoreconnect.apple.com) blocks me from distributing the app for 2 weeks, because of something that's not my fault. And it takes ages for the support team to even acknowledge the issue.
+
+## The App Store Connect
+
+First, let's address the elephant in the room - [App Store Connect](https://appstoreconnect.apple.com). This is definitely one of the "pain" that I was talking about.
+
+![Gantt chart of App Store Connect](/static/plantuml/data/blog/my-first-two-months-as-an-indie-dev/gantt-appstoreconnect.svg)
+
+App Store Connect is the platform that Apple provides to app developers to publish their apps on the App Store. And it's notoriously buggy.
+
+I wasn't expecting it to be that bad. I thought people were kinda exaggerating it. But the experience I got tells me otherwise.
+
+### Payment Processing for Apple Developer Program
+
+To be able to access the App Store Connect, you need to join the [Apple Developer Program](https://developer.apple.com/program/). So I did. I paid $99.99 for the program and received a welcome email.
+
+I thought that's it, "I may start to use the platform to set up the TestFlight for my app". Then I head to [developer.apple.com](http://developer.apple.com/) to log in. After entering my password and stuff, it just leads me to the payment page, asking me to pay for the program, like I didn't do so.
+
+Turns out, in my case, it takes 48 hours to process my payment. And there is no obvious way to tell if an account totally didn't join the Apple Developer Program, or if it is about to join the program but the payment is still under process. If I were not careful, I might pay them twice.
+
+And when they have done the processing, they didn't notify me in any way, it just stops directing me to the payment page again, when I'm trying to log in.
+
+Not a great first impression of the platform.
+
+### Setting up Testflight
+
+[Testflight](https://developer.apple.com/testflight/) is a way to distribute a beta app to people who are willing to test it, it also allows developers to update apps very frequently. It's crucial when we are trying to release a minimum viable product (MVP) and rapidly iterate it based on user feedback.
+
+Therefore once I was able to access the App Store connect, I followed [the tutorial](https://www.youtube.com/watch?v=DLvdZtTAJrE) to set up Testflight right away.
+
+Generally speaking, there are four easy steps to set up Testflight:
+
+1. upload a build of an app to App Store connect
+2. assign which group of testers you want to be able to download that build
+3. fill in some basic information for Apple to review
+4. wait for an approval in the review
+
+For the first build that I uploaded, it went to step 4 without a problem. But after the review, the [build status](https://help.apple.com/app-store-connect/#/dev3d6869aff) I got is something weird, instead of `Rejected` or `Ready to Test`, I got `Expired` which is only supposed to appear when it's 90 days after the build is uploaded.
+
+After the mysteriously failed first attempt, all the following builds that I upload are stuck in step 2, no matter what I do, App Store connect always shows this error "There was an error processing your request. Please try again later."
+
+![the screenshot of the App Store Connect error message](/static/images/appstoreconnect-error-msg.png)
+
+### Apple Developer Program Support
+
+I got no luck going through step 2, no matter what I do. So I contacted the [Apple Developer Program Support](https://developer.apple.com/contact/topic/select). And guess what, that didn't go well either.
+
+The support works in two ways: Phone and Email.
+
+I choose Email support first. I filled in the description of my issue on their support page. And received an auto-respond email, saying "Our team is working diligently to assist you with your request. We will respond to you in **one to two business days**."
+
+Then I got a reply **6 days** later, saying they are not the support team for English, but for my local language, despite that, I filled in the info in an English interface and I had my os language and browser language, all set to English.
+
+The email says "let us know if you prefer to continue the request in English by responding to this email. We will be glad to assist you transferring the request to the proper team." And when I try to reply to that, their email address won't receive any of my emails. The server simply denied every email I sent.
+
+So instead of giving me any instruction or information, they were asking me to reply to an unreplyable email. That was fun.🙃
+
+Then I went for Phone support. Surprisingly, that went pretty well. I clicked the button on the website, then they called me in seconds. After a brief talk, they ask me to give them more details by email and promised that this time they will contact me with an email address that I can reply to.
+
+After a few days of back-and-forth email, they notify me that they fixed the Testflight issue. So I proceed to use the same build with the same steps that I had taken to set up Testflight, and it worked.
+
+I think that indicates the issue I got is on the server side of App Store Connect, not the build I uploaded had any issue, nor the operation I did on App Store Connect is incorrect. Which means the App Store Connect is indeed buggy as hell.
+
+## The SwiftUI
+
+This part is not as painful as App Store Connect, it's actually somewhat pleasant. Not as frictionless as I thought, but fun to work with.
+
+[SwiftUI](https://developer.apple.com/xcode/swiftui/) is Apple's new framework for building user interfaces. It's cross-platform. And it's declarative, meaning we don't always have to specify every detail for anything to work. So we can abstractly tell it what we want to accomplish, and it will figure out a way to make that happen on each Apple device, no matter if it's an iPhone, iPad, or a Mac. At least, that's the vision of SwiftUI.
+
+There is plenty of good stuff I came across when I was making my app, like the data binding between the view and variable, memberwise initializer, and preview, just to name a few. I will find some time to write a dedicated post for that.
+
+But because it's relatively new, there is still a lot of functionality that hasn't been fully ported to it. When we need those functions, either we find a hacky solution, or we go back to using the not-so-new framework - UIkit.
+
+And no matter which path I chose, I always end up with some ugly code.
+
+### Share Extension
+
+There is another downside of using a new framework, sometimes it's hard to find documentation or tutorial for some aspects of it. [Share Extension](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html) is an example of that.
+
+I need to implement Share Extension, so my app will show up on the share sheet to let the user send data from another app to my app.
+
+<Image
+  alt="example-of-share-sheet"
+  src="/static/images/example-of-share-sheet.jpeg"
+  width={250}
+  height={431}
+/>
+
+But all the tutorials I find are using UIkit, instead of SwiftUI. I have to do a lot of guesswork to make it work with SwiftUI.
+
+That's why it takes 50% of my time to get it done when I was making the MVP of my app.
+
+![Gantt chart of making the MVP](/static/plantuml/data/blog/my-first-two-months-as-an-indie-dev/gantt-making-the-mvp.svg)
+
+## The Marketing
+
+All my prior job experience has nothing to do with marketing, this is completely new to me.
+
+I figured that being an independent developer is just like doing a startup, so "I'm something of an entrepreneur myself". And I may learn how to do marketing from those startups.
+
+![I'm something of a scientist myself](/static/images/Im-something-of-a-scientist-myself.png)
+
+This great website I found - [From founder wisdom to product zen](https://wizenguides.com/), curated some startup strategy guides. Regarding marketing, I think at the moment the [Building in public](https://wizenguides.com/make-them-love-you-an-introduction-to-building-in-public) strategy they introduced works best for me.
+
+So this whole blog and this very article are an effort for me to "building in public".
+
+And once I finish writing up a roadmap for my app, I'll try to [do a beta launch](https://wizenguides.com/how-to-launch-a-product) next, to hopefully attract some beta-testers other than my close friends.
+
+## The Project Management
+
+It's very exciting and refreshing to be able to come up with my **own** product idea and build it in my **own** way at my **own** pace.
+
+No more short-sighted tasks. No more compromise. And I get to tackle problems in more aspects, due to the full control I got over my app, no longer limited to some nonsense specification.
+
+At the moment, I don't see any real downside in project management by working alone, in contrast to working in an organization. I will make this kind of review a bi-monthly thing to see if what I think still holds true in the future.
+
+## Takeaways
+
+So that's my first two months of being an independent developer working on an iOS project. And I got some takeaways for you guys.
+
+👇For those who are like me, who got no prior experience with iOS development, but considering doing it. I got these pieces of advice for you
+
+- Join Apple Developer Program a few days earlier before you need to use App Store Connect
+- When contacting support, always chose Phone support, never the Email support
+
+👇For those who are curious about what I have been working on
+
+- [This is the Testflight link](https://testflight.apple.com/join/H99p1rTp) to download my app
+- And here is a link placeholder, once I finish writing up the roadmap and introduction of my app, I will put it here.

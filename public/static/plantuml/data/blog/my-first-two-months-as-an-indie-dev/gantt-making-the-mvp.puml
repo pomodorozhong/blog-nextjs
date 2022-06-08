@@ -1,0 +1,21 @@
+@startgantt
+' title Making the MVP
+scale 2
+
+Project starts 2022-04-15
+projectscale daily zoom 2.3
+hide footbox
+
+--Making the MVP--
+[List with custom swipe action] as [task1] lasts  5 days and starts 2022-04-15
+[Set up Share Extension] as [task2]        lasts  8 days and starts 2022-04-20
+[Making the icon] as [task3]               lasts  3 days and starts 2022-04-28
+
+<style>
+ganttDiagram {
+    timeline {
+        BackgroundColor #dce0e0
+    }
+}
+</style>
+@endgantt
