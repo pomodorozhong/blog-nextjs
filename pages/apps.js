@@ -13,7 +13,7 @@ export default function MyApps() {
             My Apps
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Focused on boost your productivity.
+            Focused on boosting your productivity.
           </p>
         </div>
         <div className="container py-12">
