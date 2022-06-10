@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: "pomodorozhong's Blog",
-  author: 'pomodorozhong',
-  headerTitle: 'pomodorozhong',
+  title: "Jonathan's Blog",
+  author: 'Jonathan Lee',
+  headerTitle: "Jonathan's Blog",
   description: 'Blogs, Development logs, and more',
   language: 'en-us',
   theme: 'system', // system, dark or light
