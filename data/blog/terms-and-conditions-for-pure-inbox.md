@@ -2,7 +2,7 @@
 title: Terms and Conditions for Pure Inbox
 date: '2022-08-07'
 tags: ['Pure Inbox']
-draft: false
+draft: true
 summary: This page disclosed the Terms and Conditions for my app - Pure Inbox.
 images: []
 layout: PostSimple
