@@ -2,7 +2,7 @@
 title: Privacy Policy for Pure Inbox
 date: '2022-08-04'
 tags: [Pure Inbox]
-draft: false
+draft: true
 summary: This page disclosed the Privacy Policy for my app - Pure Inbox.
 images: '/static/images/icon-pure-inbox.png'
 layout: PostSimple
