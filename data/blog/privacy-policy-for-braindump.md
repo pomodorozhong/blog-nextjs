@@ -2,7 +2,7 @@
 title: Privacy Policy for Brain Dump & Clarify
 date: '2025-11-10'
 tags: ['Brain Dump']
-draft: false
+draft: true
 summary: This page disclosed the Privacy Policy for my app - Brain Dump & Clarify.
 layout: PostSimple
 ---
