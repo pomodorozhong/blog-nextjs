@@ -3,7 +3,7 @@ title: >
   Privacy Policy for Initiative Tracker: DnD Combat
 date: '2025-11-10'
 tags: ['Initiative Tracker']
-draft: false
+draft: true
 summary: >
   This page disclosed the Privacy Policy for my app - Initiative Tracker: DnD Combat.
 layout: PostSimple
